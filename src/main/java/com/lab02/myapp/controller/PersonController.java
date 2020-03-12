@@ -42,9 +42,9 @@ public class PersonController {
 
     @PutMapping(value = "update/{id}")
     public ResponseEntity<Person> update(@PathVariable(name = "id") Long id, @RequestBody Person person) {
-        Person oldPerson = personService.getById(id);
-        return oldPerson != null
-                ? new ResponseEntity<>(personService.update(id, person), HttpStatus.OK)
+        Person updated = personService.update(id, person);
+        return updated != null
+                ? new ResponseEntity<>(updated, HttpStatus.OK)
                 : new ResponseEntity<>(HttpStatus.NOT_MODIFIED);
     }
 

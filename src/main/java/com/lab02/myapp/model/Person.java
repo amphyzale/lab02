@@ -1,6 +1,6 @@
 package com.lab02.myapp.model;
 
-//import javax.persistence.*;
+import javax.persistence.*;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -8,11 +8,11 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 
-//@Entity
-//@Table(name = "person")
+@Entity
+@Table(name = "person")
 public class Person {
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.AUTO)
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String name;
     private String email;
